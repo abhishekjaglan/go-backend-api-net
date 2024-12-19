@@ -21,7 +21,7 @@ func main() {
 	fmt.Println(&intArr[1])
 	fmt.Println(&intArr[2])
 
-	// slices (wrapper on arrays - no fixed size)
+	// slices (wrapper on arrays - no fixed size)(multiple declaration styles)
 	var intSlice []int = []int{4, 5, 6, 7}
 	fmt.Println("intSlice", intSlice)
 	intSlice = append(intSlice, 8)
