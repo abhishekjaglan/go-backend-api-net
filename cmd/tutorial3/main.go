@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	//array (fixed size in GO)
+	//array (fixed size in GO)(multiple declaration styles)
 
 	// var intArr [3]int -> initialization
 	var intArr2 [3]int = [3]int{1, 2, 3} // initialization and declaration
