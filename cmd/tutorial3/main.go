@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	//array (fixed size in GO)(multiple declaration styles)
@@ -39,6 +41,33 @@ func main() {
 
 	// memory allocation for slice using make(type, len, cap)
 	var strSlice []string = make([]string, 2, 4)
-	strSlice = append(strSlice, "a", "b", "c", "d")
+	strSlice[0] = "a"
+	strSlice[1] = "b"
+	strSlice = append(strSlice, "c", "d")
 	fmt.Println(strSlice)
+
+	// MAPS - key-value pairs
+	var myMap map[string]uint8 = make(map[string]uint8)
+	fmt.Println(myMap)
+
+	myMap2 := map[string]uint8{"Abhishek": 25, "Tanvi": 23}
+	fmt.Println(myMap2["Abhishek"])
+	fmt.Println(myMap2["Tanvi"])
+	fmt.Println(myMap2["Hello"])
+
+	var age, ok = myMap2["Abhishek"] // if value is present in map, true is returned stored in ok
+	if ok {
+		fmt.Printf("The age is %v\n", age)
+	} else {
+		fmt.Println("Invalid arguement to map")
+	}
+
+	//delete(myMap2, "Abhishek")
+	var abhishek, status = myMap2["Abhishek"]
+	if status {
+		fmt.Printf("The age is %v\n", abhishek)
+	} else {
+		fmt.Println("Invalid arguement to map")
+	}
+
 }
