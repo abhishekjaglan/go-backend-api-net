@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
 func main() {
@@ -114,4 +115,21 @@ func main() {
 		fmt.Printf("Index: %v ---> Value: %v\n", i, value)
 		i += 5
 	}
+
+	// testing time used by slice with and without memory allocation
+	var testSliceSize = 1000000
+	var testSliceWithoutMemoryAllocation []int8
+	var testSliceWithMemoryAllocation []int8 = make([]int8, testSliceSize)
+
+	fmt.Printf("Total time used by slice with %v append operations without memory allocation: %v\n", testSliceSize, testMakeSpeed(testSliceWithoutMemoryAllocation, testSliceSize))
+	fmt.Printf("Total time used by slice with %v append operations with memory allocation: %v\n", testSliceSize, testMakeSpeed(testSliceWithMemoryAllocation, testSliceSize))
+}
+
+func testMakeSpeed(slice []int8, n int) time.Duration {
+	t0 := time.Now()
+
+	for len(slice) < n {
+		slice = append(slice, 1)
+	}
+	return time.Since(t0)
 }
