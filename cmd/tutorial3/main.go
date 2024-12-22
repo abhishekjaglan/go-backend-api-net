@@ -70,4 +70,48 @@ func main() {
 		fmt.Println("Invalid arguement to map")
 	}
 
+	// iterating over maps and slices/arrays
+	// FOR loops
+	fmt.Println("Iterating over map using for loop\n")
+	for name, age := range myMap2 {
+		fmt.Printf("Name: %v, Age: %v\n", name, age)
+	}
+
+	fmt.Println("Iterating over array\n")
+	for i, v := range intArr {
+		fmt.Printf("Value: %v, Index: %v\n", v, i)
+	}
+
+	fmt.Println("Iterating over slice\n")
+	for i, v := range intSlice2 {
+		fmt.Printf("Index: %v	Value: %v\n", i, v)
+	}
+
+	fmt.Print("\n")
+
+	for i := 0; i < 5; i++ {
+		value := i + 1
+		fmt.Printf("Index: %v ---> Value: %v\n", i, value)
+	}
+
+	// while loop
+	fmt.Println("Iterating using logical while loop")
+	var i int = 0
+
+	for i < 5 {
+		fmt.Println(i)
+		i += 5
+	}
+	fmt.Printf("Value of i after exiting loop: %v", i)
+
+	i = 0
+
+	for {
+		if i > 5 {
+			break
+		}
+		value := i + 1
+		fmt.Printf("Index: %v ---> Value: %v\n", i, value)
+		i += 5
+	}
 }
